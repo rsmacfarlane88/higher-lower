@@ -1,6 +1,8 @@
 var args = arguments[0] || {};
+var attachmentQueue;
 
 $.sync = function(){
+  attachmentQueue = [];
   var playersFile = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'data/players.json');
   var playersJson = playersFile.read().text;
 
@@ -21,5 +23,7 @@ $.sync = function(){
       Salary: player.salary,
       alloy_id: player.id
     }).save();
+
+    attachmentQueue.push(player.images.default.url);
   });
 };

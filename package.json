@@ -1,0 +1,22 @@
+{
+  "name": "higher-lower",
+  "version": "1.0.0",
+  "description": "A higher or lower game based on Basketball player points per game (PPG)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsmacfarlane88/higher-lower.git"
+  },
+  "author": "Ross MacFarlane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsmacfarlane88/higher-lower/issues"
+  },
+  "homepage": "https://github.com/rsmacfarlane88/higher-lower#readme",
+  "dependencies": {
+    "knuth-shuffle": "^1.0.1"
+  }
+}

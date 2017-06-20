@@ -1,0 +1,13 @@
+<Alloy>
+  <Window id="gameWindow">
+    <View id="infoBar">
+      <Label id="scoreLabel" />
+      <Label id="score" />
+    </View>
+    <View id="container">
+      <View class="player" id="playerA" />
+      <Label id="vsLabel" />
+      <View class="player" id="playerB" />
+    </View>
+  </Window>
+</Alloy>

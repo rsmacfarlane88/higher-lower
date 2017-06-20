@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="container" onClick="playerClicked">
+		<ImageView id="playerImage" />
+		<Label id="name" />
+		<Label id="position" />
+		<Label id="gamesPlayed" />
+		<Label id="ppg" />
+	</View>
+</Alloy>

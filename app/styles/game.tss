@@ -1,0 +1,33 @@
+"#gameWindow":{
+  layout:"vertical"
+},
+
+"#infoBar":{
+  height:20,
+  layout:"horizontal"
+},
+
+"#scoreLabel":{
+  text:"Score: " 
+},
+
+"#score":{
+
+},
+
+"#container":{
+  backgroundColor:"#ffffff",
+  top: 0,
+  layout: "vertical"
+},
+
+".player":{
+  height:260,
+  top:20
+},
+
+"#vsLabel":{
+  text: "VS",
+  color:"#000000",
+  top:20
+}
