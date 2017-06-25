@@ -5,7 +5,7 @@ var player = args.player;
 $.name.text = player.get("FirstName") + " " + player.get("LastName");
 $.position.text = player.get("Position");
 $.gamesPlayed.text = player.get("Played") + " Played";
-$.ppg.text = player.get("Fppg") + " PPG";
+$.ppg.text = Math.round(player.get("Fppg") * 100) / 100 + " PPG";
 $.playerImage.image = player.get("ImageUrl");
 
 function playerClicked(e){

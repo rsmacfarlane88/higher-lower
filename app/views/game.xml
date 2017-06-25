@@ -4,10 +4,15 @@
       <Label id="scoreLabel" />
       <Label id="score" />
     </View>
-    <View id="container">
-      <View class="player" id="playerA" />
-      <Label id="vsLabel" />
-      <View class="player" id="playerB" />
+    <View id="gameContainer">
+      <View id="endGame" onClick="exitGame">
+        <Label id="endGameLabel" />
+      </View>
+      <View id="container">
+        <View class="player" id="playerA" />
+        <Label id="vsLabel" />
+        <View class="player" id="playerB" />
+      </View>
     </View>
   </Window>
 </Alloy>

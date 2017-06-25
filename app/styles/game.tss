@@ -8,11 +8,7 @@
 },
 
 "#scoreLabel":{
-  text:"Score: " 
-},
-
-"#score":{
-
+  text:"Score: "
 },
 
 "#container":{
@@ -30,4 +26,13 @@
   text: "VS",
   color:"#000000",
   top:20
+},
+
+"#endGame":{
+  backgroundColor:"#ffffff"
+},
+
+"#endGameLabel":{
+  color:"#000000",
+  text:"Well done! You completed the game. Tap anywhere to exit..."
 }

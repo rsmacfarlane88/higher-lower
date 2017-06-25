@@ -46,6 +46,15 @@ function refreshGame(){
   $.playerB.add(secondPlayerWidget.getView());
 }
 
+function endGame(){
+  $.container.hide();
+  $.endGame.show();
+}
+
+function exitGame(e){
+  $.gameWindow.close();
+}
+
 function playerClickedCallback(selectedId){
   if(selectedId == mainPlayer.get("alloy_id")){
     if(mainPlayer.get("Fppg") > secondPlayer.get("Fppg")){
@@ -69,6 +78,10 @@ function playerClickedCallback(selectedId){
 
   $.score.text = score;
   setTimeout(function(){
-    refreshGame();
+    if(score < 10){
+      refreshGame();
+    }else{
+      endGame();
+    }
   }, 2000);
 }
