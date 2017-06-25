@@ -1,14 +1,19 @@
 var args = arguments[0] || {};
 var attachmentQueue;
+var endPoint = "http://rsmacfarlane.com/wp-content/uploads/2016/11/Player.json";
+var attachmentQueue = [];
 
 $.sync = function(){
-  attachmentQueue = [];
-  var playersFile = Titanium.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, 'data/players.json');
-  var playersJson = playersFile.read().text;
+  Alloy.apiCall(endPoint, null, onSuccess, onFail);
+};
 
-  var jsonResponse = JSON.parse(playersJson);
+function onSuccess(e){
+  var response = JSON.parse(e.data);
+  _.each(response.players, processPlayer);
+  processAttachmentQueue();
+}
 
-  _.each(jsonResponse.players, function(player){
+function processPlayer(player){
     Alloy.createModel('player', {
       FirstName: player.first_name,
       LastName: player.last_name,
@@ -26,5 +31,12 @@ $.sync = function(){
     }).save();
 
     attachmentQueue.push(player.images.default.url);
-  });
 };
+
+function processAttachmentQueue(){
+  
+}
+
+function onFail(e){
+  alert(e.code);
+}

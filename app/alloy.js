@@ -9,3 +9,20 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+var xhr = require('xhr');
+
+Alloy.apiCall = function(endPoint, data, success, fail){
+  var xhr = new XHR();
+
+  var localSuccess = function(e){
+    success(e);
+    xhr = null;
+  }
+
+  var failed = function(e){
+    fail(e);
+    xhr = null;
+  }
+
+  xhr.post(endPoint, JSON.stringify(data), localSuccess, failed);
+}
