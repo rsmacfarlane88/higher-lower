@@ -20,8 +20,8 @@ function playerClicked(e){
 $.showPpg = function(isCorrect){
   $.ppg.show()
   if(isCorrect){
-    $.ppg.backgroundColor = "green";
+    $.ppg.backgroundColor = "#2DC2BD";
   }else{
-    $.ppg.backgroundColor = "red";
+    $.ppg.backgroundColor = "#a63446";
   }
 };

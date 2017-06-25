@@ -26,6 +26,7 @@ $.startGame = function(){
 }
 
 function refreshGame(){
+  $.resultBar.hide();
   $.playerA.removeAllChildren();
   $.playerB.removeAllChildren();
 
@@ -61,20 +62,30 @@ function playerClickedCallback(selectedId){
       score++;
       mainPlayerWidget.showPpg(true);
       secondPlayerWidget.showPpg(false);
+      $.resultBar.backgroundColor = "#2DC2BD";
+      $.resultText.text = "CORRECT!";
     }else{
       mainPlayerWidget.showPpg(false);
       secondPlayerWidget.showPpg(true);
+      $.resultBar.backgroundColor = "#a63446";
+      $.resultText.text = "WRONG!";
     }
   }else{
     if(secondPlayer.get("Fppg") > mainPlayer.get("Fppg")){
       score++;
       mainPlayerWidget.showPpg(false);
       secondPlayerWidget.showPpg(true);
+      $.resultBar.backgroundColor = "#2DC2BD";
+      $.resultText.text = "CORRECT!";
     }else{
       mainPlayerWidget.showPpg(true);
       secondPlayerWidget.showPpg(false);
+      $.resultBar.backgroundColor = "#a63446";
+      $.resultText.text = "WRONG!";
     }
   }
+
+  $.resultBar.show();
 
   $.score.text = score;
   setTimeout(function(){

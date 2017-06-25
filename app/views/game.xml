@@ -1,14 +1,17 @@
 <Alloy>
   <Window id="gameWindow">
     <View id="infoBar">
-      <Label id="scoreLabel" />
-      <Label id="score" />
+      <Label class="score" id="scoreLabel" />
+      <Label class="score" id="score" />
     </View>
     <View id="gameContainer">
       <View id="endGame" onClick="exitGame">
         <Label id="endGameLabel" />
       </View>
       <View id="container">
+        <View id="resultBar">
+          <Label id="resultText" />
+        </View>
         <View class="player" id="playerA" />
         <Label id="vsLabel" />
         <View class="player" id="playerB" />

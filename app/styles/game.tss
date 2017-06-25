@@ -3,13 +3,22 @@
 },
 
 "#infoBar":{
-  height:20,
+  height:40,
   layout:"horizontal"
 },
 
 "#scoreLabel":{
   text:"Score: "
 },
+
+".score":{
+  font: {
+    fontFamily: "OpenSans-SemiBold",
+    fontSize: 20
+  },
+  top:5,
+  left:5
+}
 
 "#container":{
   backgroundColor:"#0b132b",
@@ -42,4 +51,9 @@
     fontSize:18
   },
   textAlign:Ti.UI.TEXT_ALIGNMENT_CENTER
+},
+
+"#resultBar":{
+  height: 50,
+  visible: false
 }
