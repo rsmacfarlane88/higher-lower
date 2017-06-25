@@ -5,7 +5,7 @@ if (testBootstrap.testsEnabled()){
 	testBootstrap.start();
 }
 else {
-	$.index.open();
+	$.window.open();
 
 	var syncManager = Alloy.createController('sync');
 	syncManager.sync();

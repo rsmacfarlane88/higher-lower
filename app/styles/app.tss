@@ -24,3 +24,6 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar'
+}

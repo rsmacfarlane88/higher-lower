@@ -1,5 +1,8 @@
 <Alloy>
-	<Window class="container">
-		<Button id="startButton" onClick="startGame" title="Start Game"/>
+	<Window id="window">
+		<View id="container">
+		</View>
+		<Button id="startButton" onClick="startGame"/>
+
 	</Window>
 </Alloy>

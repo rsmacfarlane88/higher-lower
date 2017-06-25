@@ -1,9 +1,14 @@
-".container": {
+"#window": {
 	backgroundColor:"#ffffff"
+},
+
+"#container":{
+	backgroundImage: "default.png",
+	opacity: "0.7"
 },
 
 "#startButton":{
 	backgroundColor: "#1cafe3",
 	color: "#ffffff",
-	text: "Start"
+	title:"Start Game"
 }
