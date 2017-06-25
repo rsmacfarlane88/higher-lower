@@ -12,7 +12,7 @@
 },
 
 "#container":{
-  backgroundColor:"#ffffff",
+  backgroundColor:"#0b132b",
   top: 0,
   layout: "vertical"
 },
@@ -24,15 +24,22 @@
 
 "#vsLabel":{
   text: "VS",
-  color:"#000000",
-  top:20
+  color:"#ffffff",
+  font:{
+    fontSize:40,
+    fontFamily:'OpenSans-SemiBold'
+  }
 },
 
 "#endGame":{
-  backgroundColor:"#ffffff"
+  backgroundColor:"#0b132b"
 },
 
 "#endGameLabel":{
-  color:"#000000",
-  text:"Well done! You completed the game. Tap anywhere to exit..."
+  color:"#ffffff",
+  text:"Good shooting! You completed the game. Tap anywhere to exit...",
+  font:{
+    fontSize:18
+  },
+  textAlign:Ti.UI.TEXT_ALIGNMENT_CENTER
 }

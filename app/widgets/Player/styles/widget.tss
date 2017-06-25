@@ -6,13 +6,16 @@
 	height:120,
 	width:120,
 	top:5,
-	borderColor:"black",
-	borderRadius: 60
+	borderRadius: 60,
+	backgroundColor: "#ffffff"
 },
 
 "Label":{
-	color:"#000000",
-	top:2
+	color:"#ffffff",
+	top:2,
+	font:{
+		fontFamily:'OpenSans-Light'
+	}
 },
 
 "#ppg":{
