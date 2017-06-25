@@ -25,4 +25,21 @@ Alloy.apiCall = function(endPoint, data, success, fail){
   }
 
   xhr.post(endPoint, JSON.stringify(data), localSuccess, failed);
-}
+};
+
+Alloy.downloadImage = function(endPoint, filename, success, fail){
+  var xhr = Titanium.Network.createHTTPClient({
+  	onload: function() {
+  		var f = Ti.Filesystem.getFile(Alloy.playerImages.nativePath,filename);
+  		f.write(this.responseData);
+  	},
+  	timeout: 10000
+  });
+  xhr.open('GET', endPoint);
+  xhr.send();
+};
+
+var playerImages = Titanium.Filesystem.getFile(Titanium.Filesystem.tempDirectory,"PlayerImages");
+playerImages.createDirectory();
+playerImages.remoteBackup = false;
+Alloy.playerImages = playerImages;

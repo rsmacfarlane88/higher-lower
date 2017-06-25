@@ -2,6 +2,7 @@ var args = arguments[0] || {};
 var attachmentQueue;
 var endPoint = "http://rsmacfarlane.com/wp-content/uploads/2016/11/Player.json";
 var attachmentQueue = [];
+var currentAttachment;
 
 $.sync = function(){
   Alloy.apiCall(endPoint, null, onSuccess, onFail);
@@ -34,7 +35,20 @@ function processPlayer(player){
 };
 
 function processAttachmentQueue(){
-  
+  if(attachmentQueue.length > 0){
+    currentAttachment = attachmentQueue.shift();
+    var splitFile = currentAttachment.split('/');
+    var fileName = splitFile[splitFile.length - 1];
+    Alloy.downloadImage(currentAttachment, fileName);
+    processAttachmentQueue();
+  }else{
+    var playerImages = Ti.Filesystem.getFile(Alloy.playerImages.nativePath);
+    //success
+  }
+}
+
+function getImageFail(e){
+  processAttachmentQueue();
 }
 
 function onFail(e){
