@@ -21,7 +21,8 @@ $.sync = function(){
       Position: player.position,
       Removed: player.removed,
       Salary: player.salary,
-      alloy_id: player.id
+      alloy_id: player.id,
+      ImageUrl: player.images.default.url
     }).save();
 
     attachmentQueue.push(player.images.default.url);

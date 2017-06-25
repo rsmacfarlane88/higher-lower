@@ -12,7 +12,8 @@ exports.definition = {
 			"Position": "string",
 			"Removed": "boolean",
 			"Salary": "integer",
-			"alloy_id": "string"
+			"alloy_id": "string",
+			"ImageUrl":"string"
 		},
 		adapter: {
 			type: "sql",
