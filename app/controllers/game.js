@@ -4,7 +4,7 @@ var shuffle = require('knuth-shuffle');
 var playersCollection = Alloy.createCollection('player');
 playersCollection.fetch();
 
-var score = $.score.text = 0;
+var score;
 var players = [];
 var mainPlayer, secondPlayer;
 var mainPlayerWidget, secondPlayerWidget;
@@ -13,15 +13,31 @@ _.each(playersCollection.models, function(p){
   players.push(p);
 });
 
-var shuffledPlayers = shuffle.knuthShuffle(players);
-
-function getNextPlayer(){
-  var nextPlayer = shuffledPlayers.shift();
-  shuffledPlayers.push(nextPlayer);
+$.getNextPlayer = function(){
+  var nextPlayer = players.shift();
+  players.push(nextPlayer);
   return nextPlayer;
 }
 
+$.setScore = function(newScore){
+  score = newScore;
+  $.scoreLabel.text = score;
+};
+
+$.setResult = function(isCorrect){
+  if(isCorrect){
+    $.resultBar.backgroundColor = "#2DC2BD";
+    $.resultText.text = "CORRECT!";
+  }else{
+    $.resultBar.backgroundColor = "#a63446";
+    $.resultText.text = "WRONG!";
+  }
+  $.resultBar.show();
+}
+
 $.startGame = function(){
+  players = shuffle.knuthShuffle(players);
+  $.setScore(0);
   $.refreshGame();
 }
 
@@ -30,8 +46,8 @@ $.refreshGame = function(){
   $.playerA.removeAllChildren();
   $.playerB.removeAllChildren();
 
-  mainPlayer = getNextPlayer();
-  secondPlayer = getNextPlayer();
+  mainPlayer = $.getNextPlayer();
+  secondPlayer = $.getNextPlayer();
 
   mainPlayerWidget = Alloy.createWidget('Player', {
     player: mainPlayer,
@@ -47,7 +63,7 @@ $.refreshGame = function(){
   $.playerB.add(secondPlayerWidget.getView());
 }
 
-function endGame(){
+$.endGame = function(){
   $.container.hide();
   $.endGame.show();
 }
@@ -59,40 +75,33 @@ function exitGame(e){
 function playerClickedCallback(selectedId){
   if(selectedId == mainPlayer.get("alloy_id")){
     if(mainPlayer.get("Fppg") > secondPlayer.get("Fppg")){
-      score++;
+      $.setScore(score+1);
       mainPlayerWidget.showPpg(true);
       secondPlayerWidget.showPpg(false);
-      $.resultBar.backgroundColor = "#2DC2BD";
-      $.resultText.text = "CORRECT!";
+      $.setResult(true);
     }else{
       mainPlayerWidget.showPpg(false);
       secondPlayerWidget.showPpg(true);
-      $.resultBar.backgroundColor = "#a63446";
-      $.resultText.text = "WRONG!";
+      $.setResult(false);
     }
   }else{
     if(secondPlayer.get("Fppg") > mainPlayer.get("Fppg")){
-      score++;
+      $.setScore(score+1);
       mainPlayerWidget.showPpg(false);
       secondPlayerWidget.showPpg(true);
-      $.resultBar.backgroundColor = "#2DC2BD";
-      $.resultText.text = "CORRECT!";
+      $.setResult(true);
     }else{
       mainPlayerWidget.showPpg(true);
       secondPlayerWidget.showPpg(false);
-      $.resultBar.backgroundColor = "#a63446";
-      $.resultText.text = "WRONG!";
+      $.setResult(false);
     }
   }
 
-  $.resultBar.show();
-
-  $.score.text = score;
   setTimeout(function(){
     if(score < 10){
-      refreshGame();
+      $.refreshGame();
     }else{
-      endGame();
+      $.endGame();
     }
   }, 2000);
 }

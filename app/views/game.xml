@@ -1,8 +1,8 @@
 <Alloy>
   <Window id="gameWindow">
     <View id="infoBar">
+      <Label class="score" id="scoreHeadingLabel" />
       <Label class="score" id="scoreLabel" />
-      <Label class="score" id="score" />
     </View>
     <View id="gameContainer">
       <View id="endGame" onClick="exitGame">

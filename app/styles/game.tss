@@ -7,7 +7,7 @@
   layout:"horizontal"
 },
 
-"#scoreLabel":{
+"#scoreHeadingLabel":{
   text:"Score: "
 },
 
