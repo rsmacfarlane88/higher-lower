@@ -25,7 +25,8 @@ function TitaniumReporter(runName) {
 	this.runDescription = runName;
 	this.titaniumTestsResultsWebView = Ti.UI.createWebView({
 		html : '',
-		borderRadius:1
+		borderRadius: 1,
+		scalesPageToFit: true
 	});
 	this.titaniumTestWindow.add(this.titaniumTestsResultsWebView);
 	this.titaniumTestWindow.open();
@@ -38,7 +39,7 @@ function TitaniumReporter(runName) {
 
 TitaniumReporter.prototype.updateTestResults = function(message) {
 	this.testResults += message;
-	this.titaniumTestsResultsWebView.html = this.testResultsHeader + this.testResults + this.testResultsFooter;
+	this.titaniumTestsResultsWebView.setHtml(this.testResultsHeader + this.testResults + this.testResultsFooter);
 }
 
 

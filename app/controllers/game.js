@@ -22,10 +22,10 @@ function getNextPlayer(){
 }
 
 $.startGame = function(){
-  refreshGame();
+  $.refreshGame();
 }
 
-function refreshGame(){
+$.refreshGame = function(){
   $.resultBar.hide();
   $.playerA.removeAllChildren();
   $.playerB.removeAllChildren();

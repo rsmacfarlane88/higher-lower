@@ -1,8 +1,9 @@
 var testBootstrap = require('/test/tests');
+var tests = new testBootstrap.tests();
 
-console.log("Tests enabled:"+testBootstrap.testsEnabled());
-if (testBootstrap.testsEnabled()){
-	testBootstrap.start();
+console.log("Tests enabled:"+tests.testsEnabled());
+if (tests.testsEnabled()){
+	tests.start();
 }
 else {
 	$.window.open();

@@ -1,9 +1,12 @@
-function testsEnabled(){
+function tests() {
+};
+
+tests.prototype.testsEnabled = function(){
 	var tests = Alloy.createController("testsEnabled");
 	return tests.testsEnabled;
 }
 
-function start(){
+tests.prototype.start = function(){
 	var jasmine = require('/test/lib/jasmine');
 	var jasmineTitanium = require('/test/lib/jasmine-titanium');
 	var reporter = new jasmineTitanium.TitaniumReporter("HigherLower");
@@ -16,5 +19,4 @@ function start(){
 	jasmine.jasmine.getEnv().execute();
 }
 
-exports.testsEnabled = testsEnabled;
-exports.start = start;
+exports.tests = tests;
