@@ -40,7 +40,7 @@
   }
 },
 
-"#endGame":{
+"#endGameContainer":{
   backgroundColor:"#0b132b"
 },
 

@@ -65,7 +65,7 @@ $.refreshGame = function(){
 
 $.endGame = function(){
   $.container.hide();
-  $.endGame.show();
+  $.endGameContainer.show();
 }
 
 function exitGame(e){
