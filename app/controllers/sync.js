@@ -42,7 +42,6 @@ function processAttachmentQueue(){
     Alloy.downloadImage(currentAttachment, fileName);
     processAttachmentQueue();
   }else{
-    var playerImages = Ti.Filesystem.getFile(Alloy.playerImages.nativePath);
     //success
   }
 }

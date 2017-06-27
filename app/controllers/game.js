@@ -6,11 +6,13 @@ playersCollection.fetch();
 
 var score;
 var players = [];
-var mainPlayer, secondPlayer;
-var mainPlayerWidget, secondPlayerWidget;
+var mainPlayer;
+var secondPlayer;
+var mainPlayerWidget;
+var secondPlayerWidget;
 
-_.each(playersCollection.models, function(p){
-  players.push(p);
+_.each(playersCollection.models, function(player){
+  players.push(player);
 });
 
 $.getNextPlayer = function(){
@@ -73,7 +75,7 @@ function exitGame(e){
 }
 
 function playerClickedCallback(selectedId){
-  if(selectedId == mainPlayer.get("alloy_id")){
+  if(selectedId === mainPlayer.get("alloy_id")){
     if(mainPlayer.get("Fppg") > secondPlayer.get("Fppg")){
       $.setScore(score+1);
       mainPlayerWidget.showPpg(true);
