@@ -8,7 +8,7 @@
 },
 
 "#scoreHeadingLabel":{
-  text:"Score: "
+  text:L("score")
 },
 
 ".score":{
@@ -18,7 +18,7 @@
   },
   top:5,
   left:5
-}
+},
 
 "#container":{
   backgroundColor:"#0b132b",
@@ -46,7 +46,7 @@
 
 "#endGameLabel":{
   color:"#ffffff",
-  text:"Good shooting! You completed the game. Tap anywhere to exit...",
+  text:L("endGameText"),
   font:{
     fontSize:18
   },

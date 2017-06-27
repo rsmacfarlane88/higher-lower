@@ -29,10 +29,10 @@ $.setScore = function(newScore){
 $.setResult = function(isCorrect){
   if(isCorrect){
     $.resultBar.backgroundColor = "#2DC2BD";
-    $.resultText.text = "CORRECT!";
+    $.resultText.text = L("correct");
   }else{
     $.resultBar.backgroundColor = "#a63446";
-    $.resultText.text = "WRONG!";
+    $.resultText.text = L("wrong");
   }
   $.resultBar.show();
 }

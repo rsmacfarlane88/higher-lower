@@ -2,10 +2,6 @@
 	backgroundColor:"#0b132b"
 },
 
-"#container":{
-
-},
-
 "#logo":{
 	image: "/images/logo.png",
 	height:200,
@@ -15,7 +11,7 @@
 
 "#title":{
 	top:230,
-	text:"Shot Clock",
+	text:L("shotClock"),
 	font: {
 		fontSize: 20,
 		fontFamily: 'OpenSans-SemiBold'
@@ -26,7 +22,7 @@
 "#startButton":{
 	backgroundColor: "#1cafe3",
 	color: "#ffffff",
-	title:"Start Game",
+	title:L("startGame"),
 	bottom: 50,
 	font:{
 		fontFamily:"OpenSans"

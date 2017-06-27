@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="shotClock">Shot Clock</string>
+  <string name="startGame">Start Game</string>
+  <string name="score">Score: </string>
+  <string name="endGameText">Good shooting! You completed the game. Tap anywhere to exit...</string>
+  <string name="startGame">Start Game</string>
+  <string name="correct">CORRECT!</string>
+  <string name="wrong">WRONG!</string>
+</resources>
