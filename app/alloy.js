@@ -32,7 +32,11 @@ Alloy.downloadImage = function(endPoint, filename, success, fail){
   	onload: function() {
   		var f = Ti.Filesystem.getFile(Alloy.playerImages.nativePath,filename);
   		f.write(this.responseData);
+      success();
   	},
+    onerror: function(){
+      fail();
+    },
   	timeout: 10000
   });
   xhr.open('GET', endPoint);

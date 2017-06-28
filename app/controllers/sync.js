@@ -1,20 +1,19 @@
 var args = arguments[0] || {};
-var attachmentQueue;
 var endPoint = "http://rsmacfarlane.com/wp-content/uploads/2016/11/Player.json";
-var attachmentQueue = [];
 var currentAttachment;
+$.attachmentQueue = [];
 
 $.sync = function(){
-  Alloy.apiCall(endPoint, null, onSuccess, onFail);
+  Alloy.apiCall(endPoint, null, $.onSuccess, $.onFail);
 };
 
-function onSuccess(e){
+$.onSuccess = function(e){
   var response = JSON.parse(e.data);
-  _.each(response.players, processPlayer);
-  processAttachmentQueue();
-}
+  _.each(response.players, $.processPlayer);
+  $.processAttachmentQueue();
+};
 
-function processPlayer(player){
+$.processPlayer = function(player){
     Alloy.createModel('player', {
       FirstName: player.first_name,
       LastName: player.last_name,
@@ -31,25 +30,41 @@ function processPlayer(player){
       ImageUrl: player.images.default.url
     }).save();
 
-    attachmentQueue.push(player.images.default.url);
+    $.attachmentQueue.push(player.images.default.url);
 };
 
-function processAttachmentQueue(){
-  if(attachmentQueue.length > 0){
-    currentAttachment = attachmentQueue.shift();
-    var splitFile = currentAttachment.split('/');
-    var fileName = splitFile[splitFile.length - 1];
-    Alloy.downloadImage(currentAttachment, fileName);
-    processAttachmentQueue();
+$.processAttachmentQueue = function(){
+  if($.attachmentQueue.length > 0){
+    $.downloadAttachment();
   }else{
-    //success
+    $.syncComplete();
   }
-}
+};
 
-function getImageFail(e){
-  processAttachmentQueue();
-}
+$.downloadAttachment = function(){
+  currentAttachment = $.attachmentQueue.shift();
+  var fileName = $.getAttachmentFilename();
+  Alloy.downloadImage(currentAttachment, fileName, $.downloadAttachmentSuccess, $.getImageFail);
+};
 
-function onFail(e){
+$.downloadAttachmentSuccess = function(){
+  $.processAttachmentQueue();
+};
+
+$.getAttachmentFilename = function(){
+  var splitFile = currentAttachment.split('/');
+  var filename = splitFile[splitFile.length - 1];
+  return filename;
+};
+
+$.getImageFail = function(e){
+  $.processAttachmentQueue();
+};
+
+$.onFail = function(e){
   alert(e.code);
-}
+};
+
+$.syncComplete = function(){
+  args.success();
+};

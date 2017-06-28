@@ -11,6 +11,10 @@ tests.prototype.start = function(){
 	var jasmineTitanium = require('/test/lib/jasmine-titanium');
 	var reporter = new jasmineTitanium.TitaniumReporter("HigherLower");
 
+	var testModule = require('/test/controllers/sync');
+	testSuite = new testModule.syncControllerTests(jasmine);
+	testSuite.defineTestSuite(jasmine);
+
   var testModule = require('/test/controllers/game');
 	testSuite = new testModule.gameControllerTests(jasmine);
 	testSuite.defineTestSuite(jasmine);
