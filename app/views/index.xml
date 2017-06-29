@@ -3,7 +3,14 @@
 		<View id="container">
 			<ImageView id="logo"></ImageView>
 			<Label id="title" />
-			<Button id="startButton" onClick="startGame"/>
+			<View id="mainMenu">
+				<ActivityIndicator id="spinner"></ActivityIndicator>
+				<View id="menuItems">
+					<Label class="menuItem" id="startGame" onClick="startGame"/>
+					<Label class="menuItem" id="howToPlay" onClick="showHelp" />
+					<Label class="menuItem" id="about" onClick="showAbout" />
+				</View>
+			</View>
 		</View>
 	</Window>
 </Alloy>

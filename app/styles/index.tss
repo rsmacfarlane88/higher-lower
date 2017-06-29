@@ -13,18 +13,47 @@
 	top:230,
 	text:L("shotClock"),
 	font: {
-		fontSize: 20,
+		fontSize: 24,
 		fontFamily: 'OpenSans-SemiBold'
 	},
 	color:"#ffffff"
 }
 
-"#startButton":{
-	backgroundColor: "#1cafe3",
-	color: "#ffffff",
-	title:L("startGame"),
-	bottom: 50,
-	font:{
-		fontFamily:"OpenSans"
-	}
+"#mainMenu":{
+	bottom:0,
+	top:400
+},
+
+"#menuItems":{
+	layout:"vertical",
+	visible:false
+},
+
+".menuItem":{
+	font: {
+		fontSize: 24,
+		fontFamily: 'OpenSans-SemiBold'
+	},
+	color:"#ffffff",
+	top:10
+},
+
+"#startGame":{
+	text:L("startGame")
+},
+
+"#howToPlay":{
+	text:"How To Play"
+},
+
+"#about":{
+	text:"About"
+},
+
+"#spinner":{
+	color: '#ffffff',
+  font: {fontFamily:'OpenSans', fontSize:20},
+  message: 'Loading...',
+  height:Ti.UI.SIZE,
+  width:Ti.UI.SIZE
 }
