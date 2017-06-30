@@ -12,6 +12,7 @@ playerId = playerId[playerId.length-1];
 
 var imagePath = Ti.Filesystem.getFile(Alloy.playerImages.nativePath, playerId+".png");
 $.playerImage.image = imagePath.nativePath;
+$.teamImage.image = "/images/teams/"+player.get("TeamId") + ".png";
 
 function playerClicked(e){
   args.clickedCallback(player.get("alloy_id"));

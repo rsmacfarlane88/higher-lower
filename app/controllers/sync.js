@@ -10,11 +10,12 @@ $.sync = function(){
 $.onSuccess = function(e){
   var response = JSON.parse(e.data);
   _.each(response.players, $.processPlayer);
+  _.each(response.teams, $.processTeam);
   $.processAttachmentQueue();
 };
 
 $.processPlayer = function(player){
-    Alloy.createModel('player', {
+    var playerModel = Alloy.createModel('player', {
       FirstName: player.first_name,
       LastName: player.last_name,
       Fppg: player.fppg,
@@ -28,9 +29,25 @@ $.processPlayer = function(player){
       Salary: player.salary,
       alloy_id: player.id,
       ImageUrl: player.images.default.url
-    }).save();
+    });
+
+    if(player.team && player.team._members){
+      playerModel.set({"TeamId": player.team._members[0]});
+    }
+
+    playerModel.save();
 
     $.attachmentQueue.push(player.images.default.url);
+};
+
+$.processTeam = function(team){
+  Alloy.createModel('team', {
+    City: team.city,
+    Code: team.code,
+    FullName: team.full_name,
+    Name: team.name,
+    alloy_id: team.id
+  }).save();
 };
 
 $.processAttachmentQueue = function(){

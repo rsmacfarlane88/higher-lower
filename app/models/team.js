@@ -1,24 +1,15 @@
 exports.definition = {
 	config: {
 		columns: {
-			"FirstName": "string",
-			"LastName": "string",
-			"Fppg": "integer",
-			"Injured": "boolean",
-			"InjuryDetails": "string",
-			"InjuryStatus": "string",
-			"Played": "integer",
-			"PlayerCardUrl": "string",
-			"Position": "string",
-			"Removed": "boolean",
-			"Salary": "integer",
-			"alloy_id": "string",
-			"ImageUrl":"string",
-			"TeamId":"string"
+			"City": "string",
+			"Code": "string",
+			"FullName": "string",
+			"Name": "string",
+			"alloy_id": "string"
 		},
 		adapter: {
 			type: "sql",
-			collection_name: "player"
+			collection_name: "team"
 		}
 	},
 	extendModel: function(Model) {
