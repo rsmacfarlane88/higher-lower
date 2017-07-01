@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+## Shot Clock
 
-You can use the [editor on GitHub](https://github.com/rsmacfarlane88/higher-lower/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### Features
+- Sync player JSON data and images
+- Presents 2 players on screen with their images, team logo, position and games played.
+- User can guess which player has the higher PPG (Points per game)
+- Game ends when the user gets 10 correct
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Future work
+- Add a countdown timer which would be the "shot clock"
+- Give different points depending on speed of answer
+- Sync only when new data is available and not every time the app is started as it is now.
+- Leaderboard for high scores
+- Sounds
+- Animations
+- Tablet support
 
-### Markdown
+### Unit Tests
+Jasmine unit test framework was used to test the controllers within the app. Due to time constraints the sync controller is the only code with tests but this shows what can be done.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+One of the downsides that I can see from using the unit test framework is that I had to make my functions "public" in a way by prefixing them with the "$" so that jasmine controllers could call the functions.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rsmacfarlane88/higher-lower/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Frameworks used
+- Knuth-Shuffle
+  - Used to randomise the player array properly each time the game is started.
+- XHR
+  - HTTP Client for titanium to make API calls
+- Jasmine
+  - Unit test framework for titanium
