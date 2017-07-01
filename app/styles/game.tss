@@ -4,7 +4,12 @@
 
 "#infoBar":{
   height:40,
-  layout:"horizontal"
+  layout:"horizontal",
+  backgroundColor:"#0b132b",
+},
+
+"#infoBar[platform=ios]":{
+  top:20
 },
 
 "#scoreHeadingLabel":{
@@ -17,7 +22,8 @@
     fontSize: 20
   },
   top:5,
-  left:5
+  left:5,
+  color:"#ffffff"
 },
 
 "#container":{
@@ -27,7 +33,7 @@
 },
 
 ".player":{
-  height:260,
+  height:230,
   top:20
 },
 
@@ -35,7 +41,7 @@
   text: "VS",
   color:"#ffffff",
   font:{
-    fontSize:40,
+    fontSize:32,
     fontFamily:'OpenSans-SemiBold'
   }
 },
@@ -56,4 +62,12 @@
 "#resultBar":{
   height: 50,
   visible: false
+},
+
+"#resultText":{
+  font: {
+    fontFamily: "OpenSans-SemiBold",
+    fontSize: 20
+  },
+  color:"#ffffff"
 }

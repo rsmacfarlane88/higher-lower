@@ -35,7 +35,7 @@
 		fontFamily: 'OpenSans-SemiBold'
 	},
 	color:"#ffffff",
-	top:10
+	top:15
 },
 
 "#startGame":{
