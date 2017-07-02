@@ -5,10 +5,11 @@
 - Presents 2 players on screen with their images, team logo, position and games played.
 - User can guess which player has the higher PPG (Points per game)
 - Game ends when the user gets 10 correct
+- Cross platform - android and iOS versions
 
 ### Future work
 - Add a countdown timer which would be the "shot clock"
-- Give different points depending on speed of answer
+- Give different points depending on speed of answer. E.g. 3 points for a quick answer, 2 and 1 points for slower answers depending on time taken.
 - Sync only when new data is available and not every time the app is started as it is now.
 - Leaderboard for high scores
 - Sounds
