@@ -12,7 +12,8 @@
 	width:120,
 	top:5,
 	borderRadius: 60,
-	backgroundColor: "#ffffff"
+	backgroundColor: "#ffffff",
+	image: WPATH("/images/blankProfile.png")
 },
 
 "#teamImage":{
