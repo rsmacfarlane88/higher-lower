@@ -1,0 +1,25 @@
+"#helpWindow":{
+  backgroundColor:"#0b132b"
+},
+
+"#helpText":{
+  font:{
+    fontFamily: 'OpenSans',
+    fontSize:26
+  },
+  color: "#ffffff",
+  top:20,
+  left:20,
+  right:20,
+  bottom:100
+},
+
+"#mainMenuButton":{
+  font:{
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize:20
+  },
+  color: "#ffffff",
+  text: "Back to Main Menu",
+  bottom:20
+}

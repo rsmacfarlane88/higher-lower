@@ -1,0 +1,6 @@
+<Alloy>
+  <Window id="helpWindow">
+    <Label id="helpText"></Label>
+    <Label id="mainMenuButton" onClick="closeWindow"/>
+  </Window>
+</Alloy>

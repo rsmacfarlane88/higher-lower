@@ -9,7 +9,7 @@ if (tests.testsEnabled()){
 else {
 	$.spinner.show();
 	syncing = true;
-	var syncManager = Alloy.createController('sync', { success: syncComplete });
+	var syncManager = Alloy.createController('sync/sync', { success: syncComplete });
 	syncManager.sync();
 
 	$.window.open();
@@ -23,16 +23,18 @@ function syncComplete(){
 
 function startGame(e){
 	if(!syncing){
-		var gameController = Alloy.createController('game');
+		var gameController = Alloy.createController('sections/game');
 		gameController.getView().open();
 		gameController.startGame();
 	}
 }
 
 function showHelp(e){
-
+	var helpController = Alloy.createController('sections/help');
+	helpController.getView().open();
 }
 
 function showAbout(e){
-	
+	var aboutController = Alloy.createController('sections/about');
+	aboutController.getView().open();
 }
