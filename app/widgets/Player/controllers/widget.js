@@ -4,7 +4,7 @@ var player = args.player;
 
 $.name.text = player.get("FirstName") + " " + player.get("LastName");
 $.position.text = player.get("Position");
-$.gamesPlayed.text = player.get("Played") + " Played";
+$.gamesPlayed.text = player.get("Played") !== null ? player.get("Played") : "0" + " Played";
 $.ppg.text = Math.round(player.get("Fppg") * 100) / 100 + " PPG";
 
 var playerId = player.get("alloy_id").split('-');
