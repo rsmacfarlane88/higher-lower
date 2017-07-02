@@ -8,11 +8,34 @@ if (tests.testsEnabled()){
 }
 else {
 	$.spinner.show();
+	$.window.open();
+	if(OS_ANDROID){
+		checkStoragePermissions();
+		startSync();
+	}else{
+		startSync();
+	}
+}
+
+function checkStoragePermissions(){
+	var hasStoragePermissions = Titanium.Filesystem.hasStoragePermissions();
+	if(!hasStoragePermissions){
+		Titanium.Filesystem.requestStoragePermissions(function(e){
+			if(!e.success){
+				alert("You can change storage permissions later from app settings");
+			}else{
+				startSync();
+			}
+		});
+	}else{
+		startSync();
+	}
+}
+
+function startSync(){
 	syncing = true;
 	var syncManager = Alloy.createController('sync/sync', { success: syncComplete });
 	syncManager.sync();
-
-	$.window.open();
 }
 
 function syncComplete(){
