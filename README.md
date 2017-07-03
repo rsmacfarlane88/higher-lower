@@ -1,5 +1,15 @@
 ## Shot Clock
 
+<a href="https://youtu.be/gh-y9aXgnJw" target="_blank"><img src="http://img.youtube.com/vi/gh-y9aXgnJw/0.jpg" 
+alt="Android Shot Clock Showcase" width="240" height="180" border="10" /></a>
+
+Android
+
+<a href="https://youtu.be/4E45Yjw34qI" target="_blank"><img src="http://img.youtube.com/vi/4E45Yjw34qI/0.jpg" 
+alt="iOS Shot Clock Showcase" width="240" height="180" border="10" /></a>
+
+iOS
+
 ### Features
 - Sync player JSON data and images
 - Presents 2 players on screen with their images, team logo, position and games played.
@@ -17,6 +27,8 @@
 - Tablet support
 
 ### Unit Tests
+![Unit Tests](https://goo.gl/photos/YfSjLQdM2aWkP6VF6 "Unit Tests")
+
 Jasmine unit test framework was used to test the controllers within the app. Due to time constraints the sync controller is the only code with tests but this shows what can be done.
 
 One of the downsides that I can see from using the unit test framework is that I had to make my functions "public" in a way by prefixing them with the "$" so that jasmine controllers could call the functions.
