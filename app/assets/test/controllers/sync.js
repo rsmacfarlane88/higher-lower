@@ -115,49 +115,6 @@ syncControllerTests.prototype.defineTestSuite = function() {
 			jasmine.expect(downloadAttachmentSpy).not.toHaveBeenCalled();
 			jasmine.expect(successSpy).toHaveBeenCalled();
 		});
-
-		// jasmine.it("processPlayer should create model with the correct values", function(){
-		// 	var createModelSpy = jasmine.spyOn(Alloy, "createModel").andReturn({
-		// 		config:{columns:[]},
-		// 		save:function(){}
-		// 	});
-		// 	$.createUserAudit(auditModel);
-		// 	jasmine.expect(createModelSpy).toHaveBeenCalledWith("userAudit", {alloy_id:Ti.Utils.sha1(auditModel.Id+Alloy.currentUser), UserId: Alloy.currentUser, AuditId: auditModel.Id, TenantName:"string setting", IsDownloaded: false});
-		// });
-		//
-		// jasmine.it("processPlayer should call model.set the correct amount of times", function(){
-		// 	var createModelSpy = jasmine.spyOn(Alloy, "createModel").andReturn({
-		// 		config:{
-		// 			columns:{
-		// 			    "Name": "TEXT",
-		// 			    "FormId": "TEXT",
-		// 			    "UserId": "TEXT",
-		// 			    "IsVisible": "BOOL",
-		// 			    "CreatedDateTime": "TEXT",
-		// 			    "ModifiedDateTime": "TEXT",
-		// 			    "ArchiveReinstateReason": "TEXT",
-		// 			    "Version": "integer",
-		// 			    "TenantName":"TEXT"
-		// 			}
-		// 		}
-		// 	});
-		// 	jasmine.spyOn($, "saveModel");
-		// 	var currentModelSetSpy = jasmine.spyOn($, "setModelParameter");
-		// 	$.createUserAudit(auditModel);
-		// 	jasmine.expect(currentModelSetSpy.callCount).toEqual(0);
-		// });
-		//
-		// jasmine.it("processPlayer should call save model", function(){
-		// 	var createModelSpy = jasmine.spyOn(Alloy, "createModel").andReturn({
-		// 		config:{
-		// 			columns:{}
-		// 		}
-		// 	});
-		// 	var saveSpy = jasmine.spyOn($, "saveModel");
-		// 	var currentModelSetSpy = jasmine.spyOn($, "setModelParameter");
-		// 	$.processAudit(auditModel);
-		// 	jasmine.expect(saveSpy).toHaveBeenCalled();
-		// });
 	});
 };
 
