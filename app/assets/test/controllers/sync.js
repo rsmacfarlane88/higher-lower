@@ -65,7 +65,7 @@ syncControllerTests.prototype.defineTestSuite = function() {
 		jasmine.beforeEach(function() {
  			/*Alloy.setSetting = function(name, value){};
  			Alloy.getSetting = function(name){ return 'string setting' };*/
-      $ = Alloy.createController('sync');
+      $ = Alloy.createController('sync/sync');
       Alloy.apiCall = function(){};
 		});
 

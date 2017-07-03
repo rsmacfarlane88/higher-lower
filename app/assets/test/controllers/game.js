@@ -13,7 +13,7 @@ gameControllerTests.prototype.defineTestSuite = function() {
 		jasmine.beforeEach(function() {
  			/*Alloy.setSetting = function(name, value){};
  			Alloy.getSetting = function(name){ return 'string setting' };*/
-      $ = Alloy.createController('game');
+      $ = Alloy.createController('sections/game');
       $.refreshGame = function(){};
 		});
 
