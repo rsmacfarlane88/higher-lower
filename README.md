@@ -1,5 +1,8 @@
 ## Shot Clock
 
+[Android](https://youtu.be/gh-y9aXgnJw)
+[iOS](https://youtu.be/4E45Yjw34qI)
+
 ### Features
 - Sync player JSON data and images
 - Presents 2 players on screen with their images, team logo, position and games played.
