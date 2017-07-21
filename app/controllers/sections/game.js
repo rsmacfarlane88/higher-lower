@@ -53,12 +53,12 @@ $.refreshGame = function(){
 
   mainPlayerWidget = Alloy.createWidget('Player', {
     player: mainPlayer,
-    clickedCallback: playerClickedCallback
+    clickedCallback: foo
   });
 
   secondPlayerWidget = Alloy.createWidget('Player', {
     player: secondPlayer,
-    clickedCallback: playerClickedCallback
+    clickedCallback: foo
   });
 
   $.playerA.add(mainPlayerWidget.getView());
@@ -72,6 +72,12 @@ $.endGame = function(){
 
 function exitGame(e){
   $.gameWindow.close();
+}
+
+function foo (selectedId) {
+  playerClickedCallback(selectedId)
+  mainPlayerWidget.disableWidget();
+  secondPlayerWidget.disableWidget();
 }
 
 function playerClickedCallback(selectedId){

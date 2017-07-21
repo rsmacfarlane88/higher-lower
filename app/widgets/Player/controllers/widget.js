@@ -29,3 +29,7 @@ $.showPpg = function(isCorrect){
     $.ppg.backgroundColor = "#a63446";
   }
 };
+
+$.disableWidget = function(){
+  $.container.removeEventListener('click', playerClicked);
+}
