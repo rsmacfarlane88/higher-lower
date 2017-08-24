@@ -27,7 +27,7 @@ iOS
 - Tablet support
 
 ### Unit Tests
-![Unit Tests](https://goo.gl/photos/YfSjLQdM2aWkP6VF6 "Unit Tests")
+<img src="https://github.com/rsmacfarlane88/higher-lower/raw/master/app/assets/images/unit-tests.png" width="200" />
 
 Jasmine unit test framework was used to test the controllers within the app. Due to time constraints the sync controller is the only code with tests but this shows what can be done.
 
